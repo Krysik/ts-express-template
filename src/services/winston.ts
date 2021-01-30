@@ -12,6 +12,7 @@ const errorLogsFileTransport = new winston.transports.File({
 const allLogsFileTransport = new winston.transports.File({
   filename: 'all_logs.log',
   level: 'info',
+  format: format.simple(),
 });
 
 const winstonOptions: LoggerOptions = {
@@ -19,7 +20,13 @@ const winstonOptions: LoggerOptions = {
     format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss',
     }),
-    format.prettyPrint()
+    format.prettyPrint(),
+    format.colorize({
+      colors: {
+        info: 'blue',
+        error: 'red',
+      },
+    })
   ),
   transports: [consoleTransport, errorLogsFileTransport, allLogsFileTransport],
 };
