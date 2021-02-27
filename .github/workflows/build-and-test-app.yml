@@ -1,4 +1,4 @@
-name: Build the app
+name: Build and test the app
 
 on:
   push:
@@ -22,3 +22,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run build --if-present
+      - run: npm run test
