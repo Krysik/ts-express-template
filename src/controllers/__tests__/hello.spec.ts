@@ -13,5 +13,5 @@ afterAll(() => {
 });
 
 it('should works', (done) => {
-  request(app).get('/test').expect(200, done);
+  request(app).get('/health-check').expect(200, done);
 });

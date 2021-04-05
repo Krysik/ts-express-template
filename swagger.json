@@ -8,7 +8,7 @@
   "host": "localhost:4000",
   "basePath": "/",
   "paths": {
-    "/test": {
+    "/health-check": {
       "get": {
         "summary": "Test endpoint",
         "responses": {
