@@ -5,7 +5,7 @@ const app = express();
 
 setupMiddlewares(app);
 
-app.get('/health-check', (_req, res) => res.status(200).json('application is running'));
+app.get('/health-check', (_req, res) => res.json('application is running'));
 
 const PORT = +(process.env.PORT as string) || 4000;
 const server = app.listen(PORT, () => {

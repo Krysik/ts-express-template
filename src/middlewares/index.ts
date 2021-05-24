@@ -5,6 +5,7 @@ import * as swaggerDocument from '../../swagger.json';
 
 const setupMiddlewares = (app: Express) => {
   app.use(logMiddleware);
+  app.disable('x-powered-by');
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 };
 
